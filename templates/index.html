@@ -11,10 +11,12 @@
             <p>Posts can be found <a href="/posts">here</a></p>
             <p>Users and there follows can be found <a href="/users">here</a></p>
         {% else %}
-            <p>Your tweets:</p>
-            <ul>
-                <li>first tweet</li>
-            </ul>
+            <h2>Your tweets:</h2>
+                {% for post in posts %}
+                <h3>{{post['user']}}</h3>
+                <p>{{post['status']}}</p>
+                <p>{{post['time']}}</p>
+                {% endfor %}
         {% endif %}
     </body>
 </html>
